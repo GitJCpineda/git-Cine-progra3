@@ -14,16 +14,27 @@
 </head>
 <body>
 
- <form class="login-form text-center" name="nav" action="navegarAdministrador" method="post">
+ <form class="login-form text-center" >
   <br>
-     <h1 class="mb-5 font-weight-light text-uppercase">Administrador</h1>
-    <button type="button" class="btn btn-primary btn-lg btn-block" name="usuarios" value="ingresar" >Usuarios</button>
-    <button type="button" class="btn btn-primary btn-lg btn-block">Empleados</button>
-    <button type="button" class="btn btn-primary btn-lg btn-block">Peliculas</>
-    <button type="button" class="btn btn-primary btn-lg btn-block">Reportes</button>
-    <button type="button" class="btn btn-primary btn-lg btn-block">Mantenimiento</button>
+    <h1 class="mb-5 font-weight-light text-uppercase">Administrador</h1>
     <br>
-    <button type="button" class="btn btn-primary btn-lg btn-block" href="login.jsp" >Salir</button>
+    <a href="AdminUsuarios.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Usuarios</a>
+    <br>
+    <br>
+     <a href="AdminEmpleados.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Empleados</a>
+     <br>
+     <br>
+     <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Peliculas</a>
+     <br>
+     <br>
+      <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Reportes</a>
+      <br>
+      <br>
+      <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Mantenimiento</a>
+    <br>
+    <br>
+    <a href="login.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Salir</a>
+   
 </form>         
 
 
