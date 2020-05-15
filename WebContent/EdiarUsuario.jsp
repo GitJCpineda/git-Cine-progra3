@@ -8,27 +8,30 @@
  <link href="css/style.css" rel="stylesheet" type="text/css"/>
 
 <meta charset="ISO-8859-1">
-<title>Form agregar Usuario</title>
+<title>Editar Usuario</title>
 </head>
 <body>
 
 <form class="login-form text-center" action="CRUDusuarios" method="post">
-                <h1 class="mb-5 font-weight-light text-uppercase">Formulario de registro</h1>
+                <h1 class="mb-5 font-weight-light text-uppercase">Formulario de edicion</h1>
                 <div class="form-group">
-                    <input type="text" name="txtNombre"  class="form-control rounded-pill form-control-lg" placeholder="Nombre">
+                <label>Nombre</label>
+                    <input type="text" name="txtNombre"  class="form-control rounded-pill form-control-lg" value="${tb_Usuarios.getNombre()}">
                 </div>
                 <div class="form-group">
-                    <input type="txt" name="txtUsuario"  class="form-control rounded-pill form-control-lg" placeholder="Usuario">
+                <label>Usuario</label>
+                    <input type="txt" name="txtUsuario"  class="form-control rounded-pill form-control-lg" value="${tb_Usuarios.getUsuario()}">
                 </div>
                 <div class="form-group">
-                    <input type="txt" name="txtPassword"  class="form-control rounded-pill form-control-lg" placeholder="Password">
+                <label>Password</label>
+                    <input type="txt" name="txtPassword"  class="form-control rounded-pill form-control-lg" value="${tb_Usuarios.getPassword()}">
+                </div>
+                <div class="form-group">             
+                <label>Tipo Usuario</label>
+                    <input type="txt" name="txtTipoUsuario"  class="form-control rounded-pill form-control-lg" value="${tb_Usuarios.getTipo_Usuario()}">
                 </div>
 
-                <div class="form-group">
-                    <input type="txt" name="txtTipoUsuario"  class="form-control rounded-pill form-control-lg" placeholder="Tipo Usuario">
-                </div>
-
-                <button type="submit" name="accion" value="Guardar" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Guardar</button>
+                <button type="submit" name="accion" value="Actualizar" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Actualizar</button>
                 <a href="ShowTb_Usuarios.jsp" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-white bg-dark" role="button" aria-pressed="true">Ver Usuarios</a>
                 
                 

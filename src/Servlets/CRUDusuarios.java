@@ -54,10 +54,9 @@ public class CRUDusuarios extends HttpServlet {
 
 		case "Listar Usuarios":
 			List<tb_UsuariosDAO> datos = DAO.listar();
-			request.setAttribute("Datos", datos);
-			request.getRequestDispatcher("/showTbUsuarios.jsp").forward(request, response);
+			request.setAttribute("datos",datos);
+			request.getRequestDispatcher("ShowTb_Usuarios.jsp").forward(request, response);
 			break;
-
 		case "Agregar Usuario":
 			request.getRequestDispatcher("AddUsuario.jsp").forward(request, response);
 			break;
@@ -72,33 +71,33 @@ public class CRUDusuarios extends HttpServlet {
 			u.setPassword(password);
 			u.setTipo_Usuario(Tipo_Usuario);
 			DAO.agregar(u);
-			request.getRequestDispatcher("CRUDusuarios?accion=Listar").forward(request, response);
+			request.getRequestDispatcher("CRUDusuarios?accion=Listar Usuarios").forward(request, response);
 			break;
 
 		case "Editar":
 			ide = Integer.parseInt(request.getParameter("id_Usuarios"));
 			tb_Usuarios us = DAO.listarid(ide);
 			request.setAttribute("tb_Usuarios", us);
-			request.getRequestDispatcher("editarusuario.jsp").forward(request, response);
+			request.getRequestDispatcher("EdiarUsuario.jsp").forward(request, response);
 			break;
 
 		case "Actualizar":
-			String Nombr = request.getParameter("txtusers");
-			String Usuari = request.getParameter("txtusuario");
-			String passwor = request.getParameter("txtpass");
-			String Tipo_Usuari = request.getParameter("txtrol");
+			String Nombr = request.getParameter("txtNombre");
+			String Usuari = request.getParameter("txtUsuario");
+			String passwor = request.getParameter("txtPassword");
+			String Tipo_Usuari = request.getParameter("txtTipoUsuario");
 			u.setNombre(Nombr);
 			u.setUsuario(Usuari);
 			u.setPassword(passwor);
 			u.setTipo_Usuario(Tipo_Usuari);
 			u.setId_Usuario(ide);
 			DAO.actualizar(u);
-			request.getRequestDispatcher("CRUDusuarios?accion=Listar").forward(request, response);
+			request.getRequestDispatcher("CRUDusuarios?accion=Listar Usuarios").forward(request, response);
 			break;
 		case "Delete":
 			ide2 = Integer.parseInt(request.getParameter("id_Usuarios"));
 			DAO.delete(ide2);
-			request.getRequestDispatcher("CRUDusuarios?accion=Listar").forward(request, response);
+			request.getRequestDispatcher("CRUDusuarios?accion=Listar Usuarios").forward(request, response);
 			break;
 
 		default:

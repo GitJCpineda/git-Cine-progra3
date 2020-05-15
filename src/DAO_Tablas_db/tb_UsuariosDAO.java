@@ -133,7 +133,7 @@ public class tb_UsuariosDAO {
 	public int actualizar(tb_Usuarios u) {
 
 		int r = 0;
-		String sql = "UPDATE tb_Usuarios SET Nombre=?, Usuario=?, Password=?, Tipo_Usuario=? WHERE id_Usuario";
+		String sql = "UPDATE tb_Usuarios SET Nombre=?, Usuario=?, Password=?, Tipo_Usuario=? WHERE id_Usuario=?";
 
 		try {
 			con = c.conectar();

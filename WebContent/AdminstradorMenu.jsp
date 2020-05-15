@@ -18,7 +18,7 @@
   <br>
     <h1 class="mb-5 font-weight-light text-uppercase">Administrador</h1>
     <br>
-    <a href="AdminUsuarios.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Usuarios</a>
+    <a href="ShowTb_Usuarios.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Usuarios</a>
     <br>
     <br>
      <a href="AdminEmpleados.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Empleados</a>
