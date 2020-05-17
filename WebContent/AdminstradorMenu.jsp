@@ -24,7 +24,7 @@
      <a href="AdminEmpleados.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Empleados</a>
      <br>
      <br>
-     <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Peliculas</a>
+     <a href="ShowTb_Pelicula.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Peliculas</a>
      <br>
      <br>
       <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Reportes</a>
