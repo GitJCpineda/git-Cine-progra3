@@ -26,7 +26,7 @@
                 </div>
 
                 <button type="submit" name="accion" value="Actualizar" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Actualizar</button>
-                <a href="ShowTb_Pelicula.jsp" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-white bg-dark" role="button" aria-pressed="true">Ver Usuarios</a>
+                <a href="ShowTb_Pelicula.jsp" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-white bg-dark" role="button" aria-pressed="true">Ver Peliculas</a>
                 
                 
                 

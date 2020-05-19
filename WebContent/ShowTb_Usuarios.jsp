@@ -21,13 +21,13 @@
       <button type="submit" name="accion" value="Agregar Usuario" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Nuevo</button>
       </form>
       
-      <div class="container">
+      
      <div class="table-responsive">
       
        <table class="table table-striped table-bordered table-hover table-condensed">
        
        <tr>
-         <th>#ID</th>
+         <th>ID</th>
          <th>Nombre</th>
          <th>Usuario</th>
          <th>Password</th>
@@ -64,7 +64,6 @@
        </table>
       </div>
 
-     </div>
 
 
 

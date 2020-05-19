@@ -21,7 +21,7 @@
     <a href="ShowTb_Usuarios.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Usuarios</a>
     <br>
     <br>
-     <a href="AdminEmpleados.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Empleados</a>
+     <a href="ShowTb_empleado.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Empleados</a>
      <br>
      <br>
      <a href="ShowTb_Pelicula.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Peliculas</a>

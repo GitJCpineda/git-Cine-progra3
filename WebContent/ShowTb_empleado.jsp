@@ -4,44 +4,64 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link href="css/style.css" rel="stylesheet" type="text/css"/>
  
 <meta charset="ISO-8859-1">
-<title>Mostrar Tabla Peliculas</title>
+<title>Mostrar Tabla empleados</title>
 </head>
 <body>
 
- <form class="login-form" action="CRUDpelicula" method="post">
+<form class="login-form" action="CRUDempleado" method="post">
  
       <a href="AdminstradorMenu.jsp" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-white bg-dark" role="button" aria-pressed="true">Menu anterior</a>
-      <button type="submit" name="accion" value="Listar Peliculas" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Listar</button>
-      <button type="submit" name="accion" value="Agregar Pelicula" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Nuevo</button>
+      <button type="submit" name="accion" value="Listar Empleado" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Listar</button>
+      <button type="submit" name="accion" value="Agregar Empleado" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Nuevo</button>
       </form>
       
-    
      <div class="table-responsive">
       
        <table class="table table-striped table-bordered table-hover table-condensed">
        
        <tr>
-         <th>ID</th>
+         <th>#ID</th>
+         <th>Jefe</th>
+         <th>Cargo</th>
          <th>Nombre</th>
-         <th>Descripcion</th>
-         <th>Clasificacion</th>
+         <th>Apellido</th>
+         <th>DPI</th>
+         <th>Fecha Ingreso</th>
+         <th>Salario</th>
+         <th>Sucursal</th>
+         <th>Registro</th>
+         <th>id_sucursal</th>
+         <th>Usuario</th>
+         <th>Tipo Cargo</th>    
          <th>Acciones</th>
        </tr>
        
        <tbody>
        <c:forEach var="dato" items="${datos}">
        <tr>
-       <td>${dato.getId_Pelicula()}</td>
-       <td>${dato.getNombre_Pelicula()}</td>
-       <td>${dato.getDescripcion()}</td>
-       <td>${dato.getTipo_Pelicula_id_Tipo()}</td>
+       <td>${dato.getId_Empleado()}</td>
+       <td>${dato.getJefe()}</td>
+       <td>${dato.getId_Cargo()}</td>
+       <td>${dato.getNombre_Empleado()}</td>
+       <td>${dato.getApellido_Empleado()}</td>
+        <td>${dato.getIdentidad_Empleado()}</td>
+       <td>${dato.getFecha_Ingreso()}</td>
+       <td>${dato.getSalario()}</td>
+       <td>${dato.getTb_Empleados_id_Sucursal()}</td>
+        <td>${dato.getTb_Empleados_id_Empleado()}</td>
+       <td>${dato.getTb_Empleados_tb_Sucursal_id_Sucursal()}</td>
+       <td>${dato.getTb_Usuarios_id_Usuario()}</td>
+       <td>${dato.getTb_Tipo_Cargo_Id_Tipo_Cargo()}</td>       
+       
+       
        <td>
-        <form action="CRUDpelicula" method="post">
-            <input type="hidden" name="id_Pelicula" value="${dato.getId_Pelicula()}">
+        <form action="CRUDempleado" method="post">
+            <input type="hidden" name="id_Usuarios" value="${dato.getId_Empleado()}">
             <input class="btn btn-warning"type="submit" name="accion" value="Editar">
             <input class="btn btn-danger" type="submit" name="accion" value="Delete">
         </form>
@@ -60,6 +80,7 @@
        </table>
       </div>
 
+     
 
 
 
