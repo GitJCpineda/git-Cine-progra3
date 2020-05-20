@@ -35,7 +35,7 @@
          <th>Salario</th>
          <th>Sucursal</th>
          <th>Registro</th>
-         <th>id_sucursal</th>
+         <th>Numero de sucursal</th>
          <th>Usuario</th>
          <th>Tipo Cargo</th>    
          <th>Acciones</th>

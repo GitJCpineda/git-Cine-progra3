@@ -164,6 +164,7 @@ public class tb_empleadoDAO {
 	public void delete(int id_empleado) {
 
 		String sql = "DELETE FROM tb_empleado WHERE id_empleado=" + id_empleado;
+		
 		try {
 
 			con = c.conectar();
