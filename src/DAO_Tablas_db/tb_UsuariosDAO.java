@@ -129,7 +129,7 @@ public class tb_UsuariosDAO {
 
 	}
 
-	//actualizarTabla
+	// actualizarTabla
 	public int actualizar(tb_Usuarios u) {
 
 		int r = 0;
@@ -158,41 +158,18 @@ public class tb_UsuariosDAO {
 		return r;
 
 	}
-	
-	//eliminarUsuario
+
+	// eliminarUsuario
 	public void delete(int id_Usuario) {
-		
-		String sql="DELETE FROM tb_Usuarios WHERE id_Usuario="+id_Usuario;
+
+		String sql = "DELETE FROM tb_Usuarios WHERE id_Usuario=" + id_Usuario;
 		try {
-			con=c.conectar();
-			ps=con.prepareStatement(sql);
+			con = c.conectar();
+			ps = con.prepareStatement(sql);
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
