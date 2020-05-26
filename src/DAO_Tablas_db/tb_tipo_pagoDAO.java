@@ -7,56 +7,50 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Controlador.Conexion;
-import modelo.tb_salas;
+import modelo.tb_tipo_pago;
 
-public class tb_salasDAO {
+public class tb_tipo_pagoDAO {
 
 	Conexion c = new Conexion();// ClaseConexi
-	tb_salas u = new tb_salas();// ClaseUsuarios
+	tb_tipo_pago u = new tb_tipo_pago();// ClaseUsuarios
 	PreparedStatement ps;
 	ResultSet rs;
 	Connection con;
 
-	// listar
+	// Metodolistar
+
 	public List listar() {
 
-		List<tb_salas> lista = new ArrayList<>();
-		String sql = "SELECT *FROM tb_salas";
+		List<tb_tipo_pago> lista = new ArrayList<>();
+		String sql = "SELECT *FROM tb_tipo_pago";
 		try {
 
 			con = c.conectar();
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				tb_salas u = new tb_salas();
-				u.setId_Sucursal(rs.getInt(1));
-				u.setId_Sala(rs.getInt(2));
-				u.setTb_Sala_id_Sala(rs.getInt(3));
-				u.setTb_Sucursal_id_Sucursal(rs.getInt(4));
+				tb_tipo_pago u = new tb_tipo_pago();
+				u.setId_Tipo_Pago(rs.getInt(1));
+				u.setNombre_Tipo_Pago(rs.getString(2));
+				u.setDescripcion(rs.getString(3));
 				lista.add(u);
-
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		return lista;
 	}
 
 	// metodoAgregar
-
-	public int agregar(tb_salas u) {
-
+	public int agregar(tb_tipo_pago u) {
 		int r = 0;
-		String sql = "INSERT INTO tb_salas(id_Sala, tb_Sala_id_Sala, tb_Sucursal_id_Sucursal)VALUES(?,?,?)";
+		String sql = "INSERT INTO tb_tipo_pago(Nombre_Tipo_Pago,Descripcion)VALUES(?,?)";
 		try {
-
 			con = c.conectar();
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, u.getId_Sala());
-			ps.setInt(2, u.getTb_Sala_id_Sala());
-			ps.setInt(3, u.getTb_Sucursal_id_Sucursal());
+			ps.setString(1, u.getNombre_Tipo_Pago());
+			ps.setString(2, u.getDescripcion());
 			r = ps.executeUpdate();
 			if (r == 1) {
 				r = 1;
@@ -67,25 +61,22 @@ public class tb_salasDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		return r;
 	}
 
 	// listarId
+	public tb_tipo_pago listarid(int id_Tipo_Pago) {
 
-	public tb_salas listarid(int id_Sucursal) {
-
-		String sql = "SELECT *FROM tb_salas WHERE id_Sucursal" + id_Sucursal;
-		tb_salas u = new tb_salas();
+		String sql = "SELECT *FROM tb_tipo_pago WHERE id_Tipo_Pago" + id_Tipo_Pago;
+		tb_tipo_pago u = new tb_tipo_pago();
 		try {
 
 			con = c.conectar();
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				u.setId_Sala(rs.getInt(2));
-				u.setTb_Sala_id_Sala(rs.getInt(3));
-				u.setTb_Sucursal_id_Sucursal(rs.getInt(4));
+				u.setNombre_Tipo_Pago(rs.getString(2));
+				u.setDescripcion(rs.getString(3));
 			}
 
 		} catch (Exception e) {
@@ -95,17 +86,18 @@ public class tb_salasDAO {
 		return u;
 	}
 
-	// actualizarTabla
+	// actualizar
+	public int actualizar(tb_tipo_pago u) {
 
-	public int actualizar(tb_salas u) {
 		int r = 0;
-		String sql = "UPDATE tb_salas SET id_Sala=?, tb_Sala_id_Sala=?, tb_Sucursal_id_Sucursal=? WHERE id_Sucursal=?";
+		String sql = "UPDATE tb_tipo_usuario SET Nombre_Tipo_Pago=?, Descripcion=? WHERE id_Tipo_Pago=?";
 		try {
+
 			con = c.conectar();
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, u.getId_Sala());
-			ps.setInt(2, u.getTb_Sala_id_Sala());
-			ps.setInt(3, u.getTb_Sucursal_id_Sucursal());
+			ps.setString(1, u.getNombre_Tipo_Pago());
+			ps.setString(2, u.getDescripcion());
+			ps.setInt(3, u.getId_Tipo_Pago());
 			r = ps.executeUpdate();
 			if (r == 1) {
 				r = 1;
@@ -121,8 +113,8 @@ public class tb_salasDAO {
 	}
 
 	// eliminar
-	public void delete(int id_Sucursal) {
-		String sql = "DELETE FROM tb_salas WHERE id_Sucursal" + id_Sucursal;
+	public void delete(int id_Tipo_Pago) {
+		String sql = "DELETE FROM tb_tipo_pago WHERE id_Tipo_Pago=" + id_Tipo_Pago;
 		try {
 
 			con = c.conectar();
