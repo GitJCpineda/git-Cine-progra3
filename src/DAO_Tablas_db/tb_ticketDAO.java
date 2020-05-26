@@ -65,7 +65,7 @@ public class tb_ticketDAO {
 
 		String sql = "INSERT INTO tb_ticket(id_Funcion,id_Tipo_Pago,id_Cliente,id_Posteo_Empleado,Fecha_Compra,id_Sucursal,id_Tipo,id_Asiento,id_Costo,tb_Funcion_id_Funcion,tb_Funcion_tb_Pelicula_id_Pelicula,tb_Cliente_id_Cliente,tb_Costo_id_Costo,tb_Tipo_Pago_id_Tipo_Pago,tb_Tipo_Ticket_id_Tipo,tb_Empleado_id_Empleado,tb_Asiento_id_Asiento,tb_Sucursal_id_Sucursal,tb_Sucursal_tb_Departamento_id_Departamento)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		try {
-			
+
 			con = c.conectar();
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, u.getId_Funcion());
@@ -87,41 +87,32 @@ public class tb_ticketDAO {
 			ps.setInt(17, u.getTb_Asiento_id_Asiento());
 			ps.setInt(18, u.getTb_Sucursal_id_Sucursal());
 			ps.setInt(19, u.getTb_Sucursal_tb_Departamento_id_Departamento());
-			r= ps.executeUpdate();
-			if(r==1) {
-				r=1;
-			}else {
-				r=0;
+			r = ps.executeUpdate();
+			if (r == 1) {
+				r = 1;
+			} else {
+				r = 0;
 			}
-			
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		
-		
-		
-		
-		
-		
-		
-		
 		return r;
 	}
-	
-	//listarporid
+
+	// listarporid
 	public tb_ticket listarid(int id_Ticket) {
-		
-		String sql = "SELECT *FROM tb_ticket WHERE id_Ticket="+id_Ticket;
+
+		String sql = "SELECT *FROM tb_ticket WHERE id_Ticket=" + id_Ticket;
 		tb_ticket u = new tb_ticket();
 		try {
-			
+
 			con = c.conectar();
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
-			while(rs.next()) {
-				
+			while (rs.next()) {
+
 				u.setId_Funcion(rs.getInt(2));
 				u.setId_Tipo_Pago(rs.getInt(3));
 				u.setId_Cliente(rs.getInt(4));
@@ -141,59 +132,71 @@ public class tb_ticketDAO {
 				u.setTb_Asiento_id_Asiento(rs.getInt(18));
 				u.setTb_Sucursal_id_Sucursal(rs.getInt(19));
 				u.setTb_Sucursal_tb_Departamento_id_Departamento(rs.getInt(20));
-				
+
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
-		
+
 		return u;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	// actualizar
+	public int actualizar(tb_ticket u) {
+
+		int r = 0;
+		String sql = "UPDATE tb_ticket SET id_Funcion=?,id_Tipo_Pago=?,id_Cliente=?,id_Posteo_Empleado=?,Fecha_Compra=?,id_Sucursal=?,id_Tipo,id_Asiento=?,id_Costo=?,tb_Funcion_id_Funcion=?,tb_Funcion_tb_Pelicula_id_Pelicula=?,tb_Cliente_id_Cliente=?,tb_Costo_id_Costo=?,tb_Tipo_Pago_id_Tipo_Pago=?,tb_Tipo_Ticket_id_Tipo=?,tb_Empleado_id_Empleado=?,tb_Asiento_id_Asiento=?,tb_Sucursal_id_Sucursal=?,tb_Sucursal_tb_Departamento_id_Departamento=? WHERE id_Ticket=?";
+		try {
+
+			con = c.conectar();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, u.getId_Funcion());
+			ps.setInt(2, u.getId_Tipo_Pago());
+			ps.setInt(3, u.getId_Cliente());
+			ps.setInt(4, u.getId_Posteo_Empleado());
+			ps.setString(5, u.getFecha_Compra());
+			ps.setInt(6, u.getId_Sucursal());
+			ps.setInt(7, u.getId_Tipo());
+			ps.setInt(8, u.getId_Asiento());
+			ps.setInt(9, u.getId_Costo());
+			ps.setInt(10, u.getTb_Funcion_id_Funcion());
+			ps.setInt(11, u.getTb_Funcion_tb_Pelicula_id_Pelicula());
+			ps.setInt(12, u.getTb_Cliente_id_Cliente());
+			ps.setInt(13, u.getTb_Costo_id_Costo());
+			ps.setInt(14, u.getTb_Tipo_Pago_id_Tipo_Pago());
+			ps.setInt(15, u.getTb_Tipo_Ticket_id_Tipo());
+			ps.setInt(16, u.getTb_Empleado_id_Empleado());
+			ps.setInt(17, u.getTb_Asiento_id_Asiento());
+			ps.setInt(18, u.getTb_Sucursal_id_Sucursal());
+			ps.setInt(19, u.getTb_Sucursal_tb_Departamento_id_Departamento());
+			r = ps.executeUpdate();
+			if (r == 1) {
+				r = 1;
+			} else {
+				r = 0;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return r;
+	}
+
+	// eliminar
+
+	public void delete(int id_Ticket) {
+		String sql = "DELETE FROM tb_ticket WHERE id_Ticket" + id_Ticket;
+		try {
+
+			con = c.conectar();
+			ps = con.prepareStatement(sql);
+			ps.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }
