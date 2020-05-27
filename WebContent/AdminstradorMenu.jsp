@@ -30,7 +30,7 @@
       <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Reportes</a>
       <br>
       <br>
-      <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Mantenimiento</a>
+      <a href="AdminTbGenerales.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Tablas Generales</a>
     <br>
     <br>
     <a href="login.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Salir</a>
