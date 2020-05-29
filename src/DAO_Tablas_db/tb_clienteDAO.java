@@ -73,7 +73,7 @@ public class tb_clienteDAO {
 
 	public tb_cliente listarid(int id_Cliente) {
 
-		String sql = "SELECT *FROM tb_cliente WHERE id_Cliente" + id_Cliente;
+		String sql = "SELECT *FROM tb_cliente WHERE id_Cliente=" + id_Cliente;
 		tb_cliente u = new tb_cliente();
 		try {
 
@@ -100,7 +100,7 @@ public class tb_clienteDAO {
 	public int actualizar(tb_cliente u) {
 
 		int r = 0;
-		String sql = "UPDATE tb_cliente SET Nombre_Cliente=?,Identidad_Cliente=?,Email=?,Tarjeta_Credito WHERE id_Cliente=?";
+		String sql = "UPDATE tb_cliente SET Nombre_Cliente=?, Identidad_Cliente=?, Email=?, Tarjeta_Credito=? WHERE id_Cliente=?";
 
 		try {
 
@@ -128,7 +128,7 @@ public class tb_clienteDAO {
 
 	public void delete(int id_Cliente) {
 
-		String sql = "DELETE FROM tb_cliente WHERE id_Cliente" + id_Cliente;
+		String sql = "DELETE FROM tb_cliente WHERE id_Cliente=" + id_Cliente;
 		try {
 			con = c.conectar();
 			ps = con.prepareStatement(sql);

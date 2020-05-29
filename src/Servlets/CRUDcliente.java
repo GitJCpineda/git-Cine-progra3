@@ -73,14 +73,14 @@ public class CRUDcliente extends HttpServlet {
 			u.setEmail(Email);
 			u.setTarjeta_Credito(Tarjeta_Credito);
 			DAO.agregar(u);
-			request.getRequestDispatcher("CRUDcliente?accion=Listar Cliente").forward(request, response);
+			request.getRequestDispatcher("CRUDcliente?accion=Listar Clientes").forward(request, response);
 			break;
 
 		case "Editar":
 			ide = Integer.parseInt(request.getParameter("id_Cliente"));
 			tb_cliente us = DAO.listarid(ide);
 			request.setAttribute("tb_cliente", us);
-			request.getRequestDispatcher("Editar_Cliente.jsp").forward(request, response);
+			request.getRequestDispatcher("EditarCliente.jsp").forward(request, response);
 			break;
 
 		case "Actualizar":
@@ -93,14 +93,15 @@ public class CRUDcliente extends HttpServlet {
 			u.setIdentidad_Cliente(Identidad_Client);
 			u.setEmail(Emai);
 			u.setTarjeta_Credito(Tarjeta_Credit);
+			u.setId_Cliente(ide);
 			DAO.actualizar(u);
-			request.getRequestDispatcher("CRUDcliente?accion=Listar Cliente").forward(request, response);
+			request.getRequestDispatcher("CRUDcliente?accion=Listar Clientes").forward(request, response);
 			break;
 
 		case "Delete":
 			ide2 = Integer.parseInt(request.getParameter("id_Cliente"));
 			DAO.delete(ide2);
-			request.getRequestDispatcher("CRUDcliente?accion=Listar Cliente").forward(request, response);
+			request.getRequestDispatcher("CRUDcliente?accion=Listar Clientes").forward(request, response);
 			break;
 
 		default:
