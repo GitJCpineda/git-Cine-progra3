@@ -55,7 +55,7 @@ public class CRUDtipoCargo extends HttpServlet {
 		case "Listar Cargo":
 			List<tb_tipo_cargoDAO> datos = DAO.listar();
 			request.setAttribute("datos", datos);
-			request.getRequestDispatcher("ShowTb_Cargo.jsp").forward(request, response);
+			request.getRequestDispatcher("ShowTb_cargo.jsp").forward(request, response);
 			break;
 
 		case "Agregar Cargo":

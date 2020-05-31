@@ -57,7 +57,7 @@ public class CRUDticket extends HttpServlet {
 		case "Listar Ticket":
 			List<tb_ticket> datos = DAO.listar();
 			request.setAttribute("datos", datos);
-			request.getRequestDispatcher("ShowTb_ticket.jsp").forward(request, response);
+			request.getRequestDispatcher("ShowTb_Ticket.jsp").forward(request, response);
 			break;
 
 		case "Agregar Ticket":

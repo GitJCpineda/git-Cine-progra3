@@ -55,7 +55,7 @@ public class CRUDsala extends HttpServlet {
 		case "Listar Sala":
 			List<tb_sala> datos = DAO.listar();
 			request.setAttribute("datos", datos);
-			request.getRequestDispatcher("ShowTb_sala").forward(request, response);
+			request.getRequestDispatcher("ShowTb_sala.jsp").forward(request, response);
 			break;
 
 		case "Agregar Sala":

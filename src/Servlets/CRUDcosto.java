@@ -68,7 +68,7 @@ public class CRUDcosto extends HttpServlet {
 			set3 = Integer.parseInt(Valor);
 			u.setNombre(Nombre);
 			u.setValor(set3);
-			DAO.agrear(u);
+			DAO.agregar(u);
 			request.getRequestDispatcher("CRUDcosto?accion=Listar Costo").forward(request, response);
 			break;
 
@@ -86,6 +86,7 @@ public class CRUDcosto extends HttpServlet {
 			set3 = Integer.parseInt(Valo);
 			u.setNombre(Nombr);
 			u.setValor(set3);
+			u.setId_Costo(ide);
 			DAO.actualizar(u);
 			request.getRequestDispatcher("CRUDcosto?accion=Listar Costo").forward(request, response);
 			break;
@@ -93,7 +94,7 @@ public class CRUDcosto extends HttpServlet {
 		case "Delete":
 			ide2 = Integer.parseInt(request.getParameter("id_Costo"));
 			DAO.delete(ide2);
-			request.getRequestDispatcher("CRUDcosto?accion= Listar Costo").forward(request, response);
+			request.getRequestDispatcher("CRUDcosto?accion=Listar Costo").forward(request, response);
 			break;
 
 		default:

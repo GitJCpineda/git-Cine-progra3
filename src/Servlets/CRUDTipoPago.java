@@ -55,7 +55,7 @@ public class CRUDTipoPago extends HttpServlet {
 		case "Listar Pago":
 			List<tb_tipo_pagoDAO> datos = DAO.listar();
 			request.setAttribute("datos", datos);
-			request.getRequestDispatcher("ShowTb_TipoPago.jsp").forward(request, response);
+			request.getRequestDispatcher("ShowTb_pago.jsp").forward(request, response);
 			break;
 
 		case "Agregar Pago":

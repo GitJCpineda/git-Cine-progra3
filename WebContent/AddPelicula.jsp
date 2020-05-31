@@ -25,7 +25,7 @@
                 </div>
 
           
-                <button type="submit" name="accion" value="Guardar" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Guardar</button>
+                <button type="submit" name="accion" value="Guardar Pelicula" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Guardar</button>
                 <a href="ShowTb_Pelicula.jsp" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-white bg-dark" role="button" aria-pressed="true">Ver Peliculas</a>
                 
                 

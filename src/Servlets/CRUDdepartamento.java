@@ -53,7 +53,7 @@ public class CRUDdepartamento extends HttpServlet {
 		switch (accion) {
 
 		case "Listar Departamento":
-			List<tb_departamentoDAO> datos = DAO.listar();
+			List<tb_departamento> datos = DAO.listar();
 			request.setAttribute("datos", datos);
 			request.getRequestDispatcher("ShowTb_departamento.jsp").forward(request, response);
 			break;

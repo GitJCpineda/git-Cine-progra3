@@ -62,7 +62,7 @@ public class CRUDpelicula extends HttpServlet {
 			request.getRequestDispatcher("AddPelicula.jsp").forward(request, response);
 			break;
 
-		case "Guardar":
+		case "Guardar Pelicula":
 			String Nombre = request.getParameter("txtNombre");
 			String Descripcion = request.getParameter("txtDescripcion");
 			String Tipo=request.getParameter("txtTipo");
@@ -72,7 +72,7 @@ public class CRUDpelicula extends HttpServlet {
 			u.setDescripcion(Descripcion);
 			u.setTipo_Pelicula_id_Tipo(ide3);
 			DAO.agregar(u);
-			request.getRequestDispatcher("CRUDpelicula?accion=Listar Peliculas").forward(request, response);
+			request.getRequestDispatcher("CRUDpelicula?accion= Listar Peliculas").forward(request, response);
 			break;
 
 		case "Editar":

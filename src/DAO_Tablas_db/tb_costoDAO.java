@@ -32,7 +32,7 @@ public class tb_costoDAO {
 			while (rs.next()) {
 
 				tb_costo u = new tb_costo();
-				u.setId_Costo(rs.getInt(rs.getInt(1)));
+				u.setId_Costo(rs.getInt(1));
 				u.setNombre(rs.getString(2));
 				u.setValor(rs.getFloat(3));
 				lista.add(u);
@@ -47,7 +47,7 @@ public class tb_costoDAO {
 
 	}
 
-	public int agrear(tb_costo u) {
+	public int agregar(tb_costo u) {
 
 		int r = 0;
 		String sql = "INSERT INTO tb_costo(Nombre,Valor)VALUES(?,?)";
@@ -75,7 +75,7 @@ public class tb_costoDAO {
 
 	public tb_costo listarid(int id_Costo) {
 
-		String sql = "SELECT *FROM tb_costo WHERE id_Costo" + id_Costo;
+		String sql = "SELECT *FROM tb_costo WHERE id_Costo=" + id_Costo;
 		tb_costo u = new tb_costo();
 		try {
 

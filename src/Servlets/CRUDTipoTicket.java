@@ -55,7 +55,8 @@ public class CRUDTipoTicket extends HttpServlet {
 		case "Listar Tipo":
 			List<tb_tipo_ticketDAO> datos = DAO.listar();
 			request.setAttribute("datos", datos);
-			request.getRequestDispatcher("ShowTbTipoTicket.jsp").forward(request, response);
+			request.getRequestDispatcher("ShowTb_Tipo_Ticket.jsp").forward(request, response);
+			break;
 
 		case "Agregar Tipo":
 			request.getRequestDispatcher("AddTipoTicket").forward(request, response);

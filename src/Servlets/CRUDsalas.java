@@ -53,7 +53,7 @@ public class CRUDsalas extends HttpServlet {
 		switch (accion) {
 
 		case "Listar Salas":
-			List<tb_salasDAO> datos = DAO.listar();
+			List<tb_salas> datos = DAO.listar();
 			request.setAttribute("datos", datos);
 			request.getRequestDispatcher("ShowTb_salas.jsp").forward(request, response);
 			break;

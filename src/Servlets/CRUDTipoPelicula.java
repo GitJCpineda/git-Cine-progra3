@@ -52,10 +52,10 @@ public class CRUDTipoPelicula extends HttpServlet {
 		String accion = request.getParameter("accion");
 		switch (accion) {
 
-		case "Listar Tipo Pelicla":
-			List<tb_tipo_peliculaDAO> datos = DAO.listar();
+		case "Listar Tipo Pelicula":
+			List<tb_tipo_pelicula> datos = DAO.listar();
 			request.setAttribute("datos", datos);
-			request.getRequestDispatcher("ShowTb_TipoPelicula.jsp").forward(request, response);
+			request.getRequestDispatcher("ShowTb_TIpo_Pelicula.jsp").forward(request, response);
 			break;
 
 		case "Agregar Tipo":
